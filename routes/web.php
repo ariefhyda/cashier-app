@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CobaController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\KasirController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,6 @@ Route::get('/users/edit/{id}', [UserController::class,'edit']);
 // History
 Route::get('/history', [HistoryController::class,'index']);
 Route::get('/history/detail/{id}', [HistoryController::class,'detail']);
+
+// KAsir
+Route::get('/kasir', [KasirController::class,'index']);
