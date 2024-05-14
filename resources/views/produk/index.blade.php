@@ -13,16 +13,20 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
-                        <th>Jumlah</th>
-                        <th>Harga</th>
+                        <th>Harga Beli</th>
+                        <th>Harga Jual</th>
+                        <th>Stok</th>
+                        <th>Satuan</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tisu</td>
+                        <td>Aqua 600ml</td>
+                        <td>2500</td>
+                        <td>3000</td>
                         <td>5</td>
-                        <td>5000</td>
+                        <td>Botol</td>
                         <td>
                             <a href="/produk/edit/1" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit</a>
                             <a href="" class="btn btn-danger"> <i class="fas fa-trash"></i> Hapus </a>
