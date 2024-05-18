@@ -18,16 +18,22 @@ class UserSeeder extends Seeder
             [
                 'name' => 'John Doe',
                 'email' => 'john@example.com',
+                'username' => 'john',
+                'level' => 'admin',
                 'password' => bcrypt('123'),
             ],
             [
                 'name' => 'Jane Doe',
                 'email' => 'jane@example.com',
+                'username' => 'jane',
+                'level' => 'kasir',
                 'password' => bcrypt('456'),
             ],
             [
                 'name' => 'Arif',
                 'email' => 'hyda.arif@gmail.com',
+                'username' => 'arif',
+                'level' => 'admin',
                 'password' => bcrypt('arif1'),
             ],
             // Add more users as needed

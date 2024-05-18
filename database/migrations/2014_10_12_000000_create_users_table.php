@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('username')->unique(); //baru
+            $table->enum('level', ['kasir', 'admin'])->default('kasir'); //baru
             $table->rememberToken();
             $table->timestamps();
         });
