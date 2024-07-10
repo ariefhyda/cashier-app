@@ -4,40 +4,44 @@
         <div class="card-header">
             <div class="d-flex justify-content-between">
                 Data Produk
-                <a href="/produk/tambah" class="btn btn-success"> <i class="fas fa-plus"></i> Tambah Produk</a>
+                <a href="/produk/tambah" class="btn btn-success"> <i class="fas fa-plus"></i>
+                    Tambah Produk</a>
             </div>
-
         </div>
         <div class="card-body">
+            @if ($message = Session::get('success'))
+                <p>{{ $message }}</p>
+            @endif
             <table class="table table-bordered table-striped">
-                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Barang</th>
+                    <th>Harga Beli</th>
+                    <th>Harga Jual</th>
+                    <th>Stok</th>
+                    <th>Satuan</th>
+                    <th>Action</th>
+                </tr>
+                @foreach ($produks as $produk)
                     <tr>
-                        <th>Nama</th>
-                        <th>Harga Beli</th>
-                        <th>Harga Jual</th>
-                        <th>Stok</th>
-                        <th>Satuan</th>
-                        <th>Opsi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Aqua 600ml</td>
-                        <td>2500</td>
-                        <td>3000</td>
-                        <td>5</td>
-                        <td>Botol</td>
+                        <td>{{ $produk->id }}</td>
+                        <td>{{ $produk->nama_barang }}</td>
+                        <td>{{ $produk->harga_beli }}</td>
+                        <td>{{ $produk->harga_jual }}</td>
+                        <td>{{ $produk->stok }}</td>
+                        <td>{{ $produk->satuan_id }}</td>
                         <td>
-                            <a href="/produk/edit/1" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit</a>
-                            <a href="" class="btn btn-danger"> <i class="fas fa-trash"></i> Hapus </a>
+                            <a href="/produk/edit/{{ $produk->id }}" class="btn btn-primary"> <i class="fas fa-edit"></i>
+                                Edit</a>
+                            <a href="/produk/delete/{{ $produk->id }}" class="btn btn-danger"> <i class="fas fa-trash"></i> Hapus
+                            </a>
                         </td>
                     </tr>
-
-                </tbody>
+                @endforeach
             </table>
+            {{ $produks->links() }}
         </div>
     </div>
 @endsection
-
 @section('css')
 @endsection

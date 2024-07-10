@@ -20,15 +20,14 @@ class Cek_login
         if (!Auth::check()) {
             return redirect('login');
         }
-        //    simpan data user pada variabel $user
+        // simpan data user pada variabel $user
         $user = Auth::user();
-
-        //    jika user memiliki level sesuai pada kolom pada lanjutkan request
+        // jika user memiliki level sesuai pada kolom pada lanjutkan request
         if ($user->level == $roles) {
+            // kasir == admin
             return $next($request);
         }
-
-        //    jika tidak memiliki akses maka kembalikan ke halaman login
+        // jika tidak memiliki akses maka kembalikan ke halaman login
         return redirect('login')->with('error', 'Maaf anda tidak memiliki akses');
     }
 }

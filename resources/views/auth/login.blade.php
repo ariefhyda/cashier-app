@@ -6,18 +6,17 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
-                            <div class="card  shadow-lg border-0 rounded-lg mt-5">
-                                <img src="{{ asset('image/mesin-kasir.jpg') }}" class="card-img-top" alt="gambar mesin kasir">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <img src="{{ asset('image/mesin-kasir.jpg') }}" class="card-imgtop" alt="gambar mesin kasir">
                                 <div class="card-body">
                                     <h5 class="card-title">Login Form</h5>
-
                                     @error('login_gagal')
                                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                             <strong>Warning!</strong> {{ $message }}
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            <button type="button" class="btn-close" data-bsdismiss="alert"
+                                                aria-label="Close"></button>
                                         </div>
                                     @enderror
-
                                     <form action="{{ url('proses_login') }}" method="POST" id="logForm">
                                         {{ csrf_field() }}
                                         <div class="form-group">
@@ -50,20 +49,13 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="card-footer text-center">
-                                    <div class="small">
-                                        <a href="{{ route('forgot_password') }}">Lupa Password?</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
-
     </div>
 @endsection
-
 @section('css')
 @endsection

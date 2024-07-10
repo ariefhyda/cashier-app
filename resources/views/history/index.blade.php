@@ -15,15 +15,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Arif</td>
-                        <td>22-01-2024</td>
-                        <td>30.000</td>
-                        <td>
-                            <a href="/history/detail/1" class="btn btn-primary"> <i class="fas fa-edit"></i> Detail</a>
-                        </td>
-                    </tr>
-
+                    @foreach ($transaksi as $d)
+                        <tr>
+                            <td>{{$d->user_id}}</td>
+                            <td>{{$d->tgl}}</td>
+                            <td>{{$d->total}}</td>
+                            <td>
+                                <a href="/history/detail/{{$d->id}}" class="btn btn-primary"> <i class="fas fa-edit"></i> Detail</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

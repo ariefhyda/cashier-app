@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // tambahkan middleware alias dengan nama cek_login
         'cek_login'=> \App\Http\Middleware\Cek_login::class
+
     ];
 }

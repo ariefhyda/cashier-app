@@ -18,15 +18,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Arif</td>
-                        <td>arif</td>
-                        <td>
-                            <a href="/users/edit/1" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit</a>
-                            <a href="" class="btn btn-danger"> <i class="fas fa-trash"></i> Hapus </a>
-                        </td>
-                    </tr>
-
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->username}}</td>
+                            <td>
+                                <a href="/users/edit/{{$user->id}}" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit</a>
+                                <a href="/users/delete/{{$user->id}}" class="btn btn-danger"> <i class="fas fa-trash"></i> Hapus </a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
