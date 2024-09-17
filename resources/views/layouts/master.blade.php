@@ -13,6 +13,7 @@
     <script src="{{asset('bootstrap-5.3.3/js/bootstrap.min.js')}}" ></script>
     <script src="{{asset('bootstrap-5.3.3/js/bootstrap.bundle.min.js')}}" ></script>
     <script src="{{asset('fontawesome-5/js/all.js')}}"></script>
+    @yield('js')
 </head>
 <body>
     <!-- bagian header -->

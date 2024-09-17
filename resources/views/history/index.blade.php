@@ -17,7 +17,7 @@
                 <tbody>
                     @foreach ($transaksi as $d)
                         <tr>
-                            <td>{{$d->user_id}}</td>
+                            <td>{{$d->user->name}}</td>
                             <td>{{$d->tgl}}</td>
                             <td>{{$d->total}}</td>
                             <td>

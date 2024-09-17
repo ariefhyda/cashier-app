@@ -22,6 +22,9 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth']], function () {
     // Kasir
     Route::get('/kasir', [KasirController::class, 'index']);
+    Route::get('/getProduk/{id}', [KasirController::class, 'getProduk']);
+    Route::post('/simpanOrder', [KasirController::class, 'simpanOrder']);
+
     Route::group(['middleware' => ['cek_login:admin']], function () {
         // Produk
         Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');

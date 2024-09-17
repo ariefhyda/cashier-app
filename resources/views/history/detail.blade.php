@@ -5,8 +5,8 @@
            Detail Histori
         </div>
         <div class="card-body">
-           <h3>Kasir : Arif</h3>
-           <span>Tanggal : 22-01-2024</span>
+           <h3>Kasir : {{$transaksi->user->name}}</h3>
+           <span>Tanggal : {{$transaksi->tgl}}</span>
            <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -17,12 +17,14 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($transaksi_detail as $d)
                 <tr>
-                    <td>Tisu</td>
-                    <td>5</td>
-                    <td>5000</td>
-                    <td>25000</td>
+                    <td>{{$d->produk->nama_barang}}</td>
+                    <td>{{$d->qty}}</td>
+                    <td>{{$d->harga}}</td>
+                    <td>{{$d->jumlah}}</td>
                 </tr>
+                @endforeach
 
             </tbody>
         </table>
